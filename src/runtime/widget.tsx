@@ -23,46 +23,34 @@
 import { React, AllWidgetProps, jsx, IMState } from 'jimu-core';
 
 const filterList = [{
-  filterType: 'CREDIT',
-  label: 'Crédito',
-  card: {
-    type: 'AMOUNT',
-    options: {
-      fullWidth: true,
-    }
-  }
+  filterType: 'PERIODO',
+  label: 'AÑO',
+  value: '2020',
 },
 {
-  filterType: 'ICR',
-  label: 'ICR',
-  card: {
-    type: 'AMOUNT'
-  }
+  filterType: 'PERIODO',
+  label: 'SEMESTRE',
+  value: 'SEMESTRE 1',
 },
 {
-  filterType: 'FMR',
-  label: 'FMR',
-  card: {
-    type: 'AMOUNT'
-  }
-}, {
-  filterType: 'FAG',
-  label: 'FAG',
-  card: {
-    type: 'SPLINE'
-  }
-}, {
-  filterType: 'LEC',
-  label: 'LEC',
-  card: {
-    type: 'PIE'
-  }
-}, {
-  filterType: 'ISA',
-  label: 'ISA',
-  card: {
-    type: 'BAR'
-  }
+  filterType: 'PERIODO',
+  label: 'TRIMESTRE',
+  value: 'TRIMESTRE 1',
+},
+{
+  filterType: 'PERIODO',
+  label: 'MES',
+  value: '2',
+},
+{
+  filterType: 'TERRITORIO',
+  label: 'DEPARTAMENTO',
+  value: ['CUNDINAMARCA'],
+},
+{
+  filterType: 'TERRITORIO',
+  label: 'MUNICIPIO',
+  value: ['FUSAGASUGA'],
 }];
 
 export default class Widget extends React.PureComponent<AllWidgetProps<{}> & { a: string }, {}> {
