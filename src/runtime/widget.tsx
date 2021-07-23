@@ -23,6 +23,14 @@
 import { React, AllWidgetProps, jsx, IMState } from 'jimu-core';
 
 const filterList = [{
+  filterType: 'INSTRUMENTO',
+  value: ['CREDITO', 'FAG', 'LEC'],
+},
+{
+  filterType: 'INSTRUMENTO',
+  label: 'SUBTIPO',
+  value: ['CRED COLOCACIONES', 'CRED SALDOS', 'FAG EXPEDIDAS', 'FAG PAGADAS', 'FAG VIGENTES', 'LEC COLOCACIONES'],
+}, {
   filterType: 'PERIODO',
   label: 'AÑO',
   value: '2020',
@@ -64,17 +72,25 @@ export default class Widget extends React.PureComponent<AllWidgetProps<{}> & { a
     return { a: state.myState.a };
   }
 
-  handleFilter = (evt) => {
+  handleSetFilter = (evt) => {
     this.props.dispatch({
       type: 'SET_FILTERS',
       val: filterList /** IMPORTANT */
     });
   }
 
+  handleClearFilter = (evt) => {
+    this.props.dispatch({
+      type: 'SET_FILTERS',
+      val: null
+    });
+  }
+
   render() {
     return (
       <div className="widget-use-redux jimu-widget m-2">
-        <button type="button" onClick={this.handleFilter}>Set filter</button>
+        <button type="button" onClick={this.handleSetFilter}>Set filter</button>&nbsp;
+        <button type="button" onClick={this.handleClearFilter}>Clear filter</button>
       </div>
     );
   }
