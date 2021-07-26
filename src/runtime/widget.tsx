@@ -22,44 +22,21 @@
 // @ts-ignore
 import { React, AllWidgetProps, jsx, IMState } from 'jimu-core';
 
-const filterList = [{
-  filterType: 'INSTRUMENTO',
-  value: ['CREDITO', 'FAG', 'LEC'],
-},
-{
-  filterType: 'INSTRUMENTO',
-  label: 'SUBTIPO',
-  value: ['CRED COLOCACIONES', 'CRED SALDOS', 'FAG EXPEDIDAS', 'FAG PAGADAS', 'FAG VIGENTES', 'LEC COLOCACIONES'],
-}, {
-  filterType: 'PERIODO',
-  label: 'AÑO',
-  value: '2020',
-},
-{
-  filterType: 'PERIODO',
-  label: 'SEMESTRE',
-  value: 'SEMESTRE 1',
-},
-{
-  filterType: 'PERIODO',
-  label: 'TRIMESTRE',
-  value: 'TRIMESTRE 1',
-},
-{
-  filterType: 'PERIODO',
-  label: 'MES',
-  value: '2',
-},
-{
-  filterType: 'TERRITORIO',
-  label: 'DEPARTAMENTO',
-  value: ['CUNDINAMARCA'],
-},
-{
-  filterType: 'TERRITORIO',
-  label: 'MUNICIPIO',
-  value: ['FUSAGASUGA'],
-}];
+const filterList = [
+  {
+    filterType: 'INSTRUMENTO',
+    label: 'SUBTIPO',
+    value: [
+      'CRED COLOCACIONES',
+      'CRED SALDOS'
+    ],
+  },
+  {
+    filterType: 'PERIODO',
+    label: 'MES',
+    value: [2],
+  }
+];
 
 export default class Widget extends React.PureComponent<AllWidgetProps<{}> & { a: string }, {}> {
   [x: string]: any;
@@ -82,7 +59,7 @@ export default class Widget extends React.PureComponent<AllWidgetProps<{}> & { a
   handleClearFilter = (evt) => {
     this.props.dispatch({
       type: 'SET_FILTERS',
-      val: null
+      val: [] // or null
     });
   }
 
