@@ -27,8 +27,8 @@ const filterList = [
     filterType: 'INSTRUMENTO',
     label: 'SUBTIPO',
     value: [
-      'CRED COLOCACIONES',
-      'CRED SALDOS'
+      'CRE COLOCACIONES',
+      'CRE SALDOS'
     ],
   },
   {
